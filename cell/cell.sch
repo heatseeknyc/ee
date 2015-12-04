@@ -1367,7 +1367,12 @@ SMT header is CONN-09042.</description>
 <part name="MCP1700" library="hrldcpr" deviceset="MCP1700" device=""/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1µF"/>
 <part name="XB24" library="hrldcpr" deviceset="XBEE-1" device="XBEE-1"/>
-<part name="U$1" library="lmt70" deviceset="LMT70" device=""/>
+<part name="U1" library="lmt70" deviceset="LMT70" device=""/>
+<part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1µF"/>
+<part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
+<part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1µF"/>
+<part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1396,7 +1401,12 @@ Doyun Kim</text>
 <instance part="MCP1700" gate="G$1" x="104.14" y="119.38"/>
 <instance part="C2" gate="G$1" x="119.38" y="114.3"/>
 <instance part="XB24" gate="G$1" x="104.14" y="88.9"/>
-<instance part="U$1" gate="G$1" x="180.34" y="78.74"/>
+<instance part="U1" gate="G$1" x="180.34" y="78.74"/>
+<instance part="C7" gate="G$1" x="149.86" y="93.98"/>
+<instance part="GND5" gate="1" x="149.86" y="88.9"/>
+<instance part="SUPPLY5" gate="G$1" x="58.42" y="96.52"/>
+<instance part="C8" gate="G$1" x="58.42" y="91.44"/>
+<instance part="GND6" gate="1" x="58.42" y="86.36"/>
 </instances>
 <busses>
 </busses>
@@ -1416,7 +1426,7 @@ Doyun Kim</text>
 <pinref part="C6" gate="G$1" pin="2"/>
 <pinref part="C6" gate="G$1" pin="2"/>
 <junction x="137.16" y="73.66"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="137.16" y1="73.66" x2="162.56" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -1439,6 +1449,14 @@ Doyun Kim</text>
 <wire x1="83.82" y1="93.98" x2="81.28" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="93.98" x2="81.28" y2="76.2" width="0.1524" layer="91"/>
 <junction x="81.28" y="76.2"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="GND6" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -1464,6 +1482,10 @@ Doyun Kim</text>
 <wire x1="119.38" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
 <junction x="119.38" y="119.38"/>
 </segment>
+<segment>
+<pinref part="SUPPLY5" gate="G$1" pin="3.3V"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+</segment>
 </net>
 <net name="V_BATT" class="0">
 <segment>
@@ -1482,9 +1504,9 @@ Doyun Kim</text>
 <junction x="137.16" y="81.28"/>
 <wire x1="137.16" y1="81.28" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="81.28" x2="154.94" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VDD"/>
+<pinref part="U1" gate="G$1" pin="VDD"/>
 <wire x1="154.94" y1="83.82" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="T_ON"/>
+<pinref part="U1" gate="G$1" pin="T_ON"/>
 <wire x1="162.56" y1="78.74" x2="154.94" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="78.74" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
 <junction x="154.94" y="81.28"/>
@@ -1502,11 +1524,14 @@ Doyun Kim</text>
 <pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="137.16" y1="99.06" x2="124.46" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="XB24" gate="G$1" pin="DIO0"/>
-<pinref part="U$1" gate="G$1" pin="TAO"/>
+<pinref part="U1" gate="G$1" pin="TAO"/>
 <wire x1="198.12" y1="78.74" x2="203.2" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="78.74" x2="203.2" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="99.06" x2="203.2" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="99.06" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
 <junction x="137.16" y="99.06"/>
+<pinref part="C7" gate="G$1" pin="1"/>
+<wire x1="149.86" y1="99.06" x2="203.2" y2="99.06" width="0.1524" layer="91"/>
+<junction x="149.86" y="99.06"/>
 </segment>
 </net>
 </nets>
